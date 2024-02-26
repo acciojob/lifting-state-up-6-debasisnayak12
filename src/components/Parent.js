@@ -11,7 +11,7 @@ const Parent = () => {
     function handleComplete(id){
         setTodos(todos.map(todo => {
             if(todo.id === id){
-                return {...todos,completed: true};
+                return {...todos, completed: true};
             }
             return todo;
         }));
