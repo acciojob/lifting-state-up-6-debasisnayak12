@@ -3,15 +3,15 @@ import Child from "./Child";
 
 const Parent = () => {
     const [todos,setTodos] = useState([
-        {title: "Learn React"},
-        {title: "Build a React app"},
-        {title: "Deploy the React app"},
+        {id:1, text:"Learn React", completed:false},
+        {id:2, text:"Build a React app", completed:false},
+        {id:3, text:"Deploy the React app", completed:false}
     ]);
 
-    function handleComplete(index){
-        setTodos(todos.map((todo, i) => {
-            if(i === index){
-                return {...todos, completed: true};
+    function handleComplete(id){
+        setTodos(todos.map(todo => {
+            if(todo.id === id){
+                return {...todos,completed: true};
             }
             return todo;
         }));
